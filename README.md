@@ -11,7 +11,6 @@ Now moving on to creating a DB in firebase. Login to the firebase console using 
 https://console.firebase.google.com/
 
 Create a new project by clicking the 'Add Project' button.
-![image](https://user-images.githubusercontent.com/26808947/139808700-2679db37-7c3e-4f23-832c-9984272a2f22.png)
 
 Enter the details of the project and you will be proceeded to your project dashboard. You can see the Realtime Database on the left.
 ![image](https://user-images.githubusercontent.com/26808947/139808972-9178673a-3491-4a89-95fe-a959a346506d.png)
