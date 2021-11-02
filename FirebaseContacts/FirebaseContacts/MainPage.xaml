@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:firebasecontacts="clr-namespace:FirebaseContacts"
+             x:Class="FirebaseContacts.MainPage">
+
+    <ContentPage.BindingContext>
+        <firebasecontacts:ViewModel/>
+    </ContentPage.BindingContext>
+
+    <StackLayout>
+        <Button Text="Fetch" Command="{Binding FetchCommand}"/>
+        <Button Text="Add" Command="{Binding AddCommand}"/>
+        <Button Text="Update" Command="{Binding UpdateCommand}"/>
+        <Button Text="Remove" Command="{Binding RemoveCommand}"/>
+        <CollectionView ItemsSource="{Binding ContactsCollection}" SelectedItem="{Binding CollectionViewSelectedItem}" SelectionMode="Single">
+            <CollectionView.EmptyView>
+                <Label Text="Fetch/Add new item" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            </CollectionView.EmptyView>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Label Text="{Binding Name, StringFormat='Name: {0}'}"/>
+                        <Label Grid.Row="1" Text="{Binding Number, StringFormat='Number: {0}'}"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </StackLayout>
+    
+</ContentPage>
